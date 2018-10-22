@@ -31,7 +31,8 @@ public class modelChooserFrame extends JFrame {
 	private  String userName;
 	private ArrayList<JButton> modelList;
 	private JPanel contentPane;
-
+	private JTextArea textArea = new JTextArea();
+	private int point = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -117,7 +118,7 @@ public class modelChooserFrame extends JFrame {
 		
 		
 		
-		JTextArea textArea = new JTextArea();
+		
 		textArea.setText("Coche n4\n Modelo 43a\nMotor X\nInformacion extra");
 		textArea.setEditable(false);
 		GridBagConstraints gbc_textArea = new GridBagConstraints();
@@ -167,15 +168,25 @@ public class modelChooserFrame extends JFrame {
 		for (int i= 0; i < modelos.size(); ++i) {
 			String rutaImg = "src\\configuracion_vehiculo\\car_images\\"+modelos.get(i).getImatge_nom();
 			ImageIcon imageIcon = new ImageIcon(rutaImg);
-			Image image = imageIcon.getImage().getScaledInstance(160, 90, Image.SCALE_DEFAULT);
+			Image image = imageIcon.getImage().getScaledInstance(100, 90, Image.SCALE_DEFAULT);
 			imageIcon = new ImageIcon(image);
 			JButton a = new JButton(imageIcon);
-			
+			point = i;
+		/*
+			a.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					textArea.setText(modelos.get(point).getDescripcio());
+					
+				}
+			});
+			*/
 			
 			modelList.add(a);
 		}
 		
-
+	
 		
 	}
 
