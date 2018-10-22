@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Insets;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
@@ -23,6 +24,8 @@ import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 import app_config.ConfigurationLoader;
+import configuracion_vehiculo.CarConfiguration;
+import configuracion_vehiculo.Model;
 
 public class modelChooserFrame extends JFrame {
 	private  String userName;
@@ -158,12 +161,21 @@ public class modelChooserFrame extends JFrame {
 	}
 	private void inicializaParametros() {
 		modelList = new ArrayList<JButton>();
-		for (int i= 0; i < 50; ++i) {
-			JButton a = new JButton(new ImageIcon("src\\carIcon.jpg"));
+		CarConfiguration car_config = new CarConfiguration();
+		car_config.leerXML_Car_Config();
+		ArrayList<Model> modelos = car_config.getModelos();
+		for (int i= 0; i < modelos.size(); ++i) {
+			String rutaImg = "src\\configuracion_vehiculo\\car_images\\"+modelos.get(i).getImatge_nom();
+			ImageIcon imageIcon = new ImageIcon(rutaImg);
+			Image image = imageIcon.getImage().getScaledInstance(160, 90, Image.SCALE_DEFAULT);
+			imageIcon = new ImageIcon(image);
+			JButton a = new JButton(imageIcon);
 			
 			
 			modelList.add(a);
 		}
+		
+
 		
 	}
 

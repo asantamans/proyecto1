@@ -51,9 +51,11 @@ public class ConfigurationLoader {
 			if(nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 				String cc_path = eElement.getElementsByTagName("car_configuration_path").item(0).getTextContent();
+				car_configuration_path = cc_path;
 
 				
 				String cc_name = eElement.getElementsByTagName("car_configuration_file_name").item(0).getTextContent();
+				car_configuration_file_name = cc_name;
 				
 				
 				employee_list = new ArrayList<String>();
@@ -80,6 +82,7 @@ public class ConfigurationLoader {
 				
 				
 				String spec_fp = eElement.getElementsByTagName("specifications_file_path").item(0).getTextContent();
+				specifications_file_path = spec_fp;
 				//System.out.println(spec_fp);
 				
 				employee_version = new ArrayList<String>();

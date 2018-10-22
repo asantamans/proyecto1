@@ -11,8 +11,8 @@
 		<user_password>pass321</user_password>
 	</employee_password>
 	<employee_version>
-		<version>empleado</version>
-		<version>cliente</version>
+		<version>true</version>
+		<version>false</version>
 	</employee_version>
 	<specifications_file_path>/spec/ejemplo</specifications_file_path>
 </configuration>

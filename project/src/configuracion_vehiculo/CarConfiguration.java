@@ -40,7 +40,6 @@ public class CarConfiguration {
 
 			//Lee del XML los modelos de coches y los guarda en un ArrayList de objetos Model llamado modelos
 			NodeList nl_modelos = doc.getElementsByTagName("model");
-			System.out.println("Numero de modelos: "+nl_modelos.getLength());
 			for (int i = 0; i < nl_modelos.getLength(); i++) {
 				Node n_model = nl_modelos.item(i);
 				if (n_model.getNodeType() == Node.ELEMENT_NODE) {
@@ -54,13 +53,10 @@ public class CarConfiguration {
 					modelos.add(md);
 				}
 			}
-			for (int i = 0; i < modelos.size(); i++) {
-				System.out.println("Modelo "+i+": "+modelos.get(i).toString());
-			}
+			
 			
 			//Lee del XML los motores disponibles y los guarda en un ArrayList de objetos Motor llamado motores
 			NodeList nl_motores = doc.getElementsByTagName("motor");
-			System.out.println("\nNumero de motores: "+nl_motores.getLength());
 			for (int i = 0; i < nl_motores.getLength(); i++) {
 				Node n_motor = nl_motores.item(i);
 				if (n_motor.getNodeType() == Node.ELEMENT_NODE) {
@@ -74,9 +70,7 @@ public class CarConfiguration {
 					motores.add(motor);
 				}
 			}
-			for (int i = 0; i < motores.size(); i++) {
-				System.out.println("Motor "+i+": "+motores.get(i).toString());
-			}
+		
 			
 			//Lee del XML los acccesorios disponibles y los guarda en un ArrayList de objetos Accesorio llamado accesorios
 			NodeList nl_accesorio = doc.getElementsByTagName("accessori");
@@ -106,9 +100,7 @@ public class CarConfiguration {
 					accesorios.add(accesori);
 				}
 			}
-			for (int i = 0; i < accesorios.size(); i++) {
-				System.out.println("Accesorio "+i+": "+accesorios.get(i).toString());
-			}
+		
 			
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
