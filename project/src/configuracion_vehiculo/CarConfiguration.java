@@ -74,7 +74,7 @@ public class CarConfiguration {
 			
 			//Lee del XML los acccesorios disponibles y los guarda en un ArrayList de objetos Accesorio llamado accesorios
 			NodeList nl_accesorio = doc.getElementsByTagName("accessori");
-			System.out.println("\nNumero de accesorios: "+nl_accesorio.getLength());
+			
 			for (int i = 0; i < nl_accesorio.getLength(); i++) {
 				Node n_acc = nl_accesorio.item(i);
 				if (n_acc.getNodeType() == Node.ELEMENT_NODE) {
